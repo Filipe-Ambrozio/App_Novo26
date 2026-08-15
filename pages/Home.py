@@ -5,6 +5,24 @@ from datetime import datetime
 
 st.set_page_config(page_title="Home", page_icon="🏠", layout="wide")
 
+# st.markdown(
+#     "[🔗 Acessar gráfico em BI](https://app.powerbi.com/view?r=eyJrIjoiOWQ0ZjBjZTMtZTYzNy00OTcyLWIwNjUtZWViZGQ0MWM0NjU2IiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)"
+# )
+st.title("☕ Link de Acessos")
+
+st.markdown(
+    "[🔗 Acessar gráfico em BI](https://app.powerbi.com/view?r=eyJrIjoiOWQ0ZjBjZTMtZTYzNy00OTcyLWIwNjUtZWViZGQ0MWM0NjU2IiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)"
+)
+st.markdown(
+    "[🔗 Acessar PLanilha de Dados](https://docs.google.com/spreadsheets/d/1wvOvJJ8KnD3-DbHRvuMyTgWZYbkiqELIUNpKiExVVQ4/edit?usp=sharing)"
+)
+st.markdown(
+    "[🔗 Acessar PLanilha de Atividades](https://docs.google.com/spreadsheets/d/1PPObC1YVFTzHyxWZqtNwocvr53ZDfyszo69DVkjvIxc/edit?usp=sharing)"
+)
+st.markdown(
+    "[🔗 Acessar Planila de Processos](https://app.powerbi.com/view?r=eyJrIjoiOWQ0ZjBjZTMtZTYzNy00OTcyLWIwNjUtZWViZGQ0MWM0NjU2IiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)"
+)
+
 URL = "https://script.google.com/macros/s/AKfycbx7BTCWvv7Qksv6NeuIp2q4-PLHYyDrfYAUdDBnyosIFBKOFn6c0Z-cD8aEhzPntw3brw/exec"
       #https://script.google.com/macros/s/AKfycbx7BTCWvv7Qksv6NeuIp2q4-PLHYyDrfYAUdDBnyosIFBKOFn6c0Z-cD8aEhzPntw3brw/exec
 PRIORITY_MAP = {
@@ -147,10 +165,10 @@ def render():
         st.markdown(card, unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown(
-        "[🔗 Acessar gráfico em BI](https://app.powerbi.com/view?r=eyJrIjoiOWQ0ZjBjZTMtZTYzNy00OTcyLWIwNjUtZWViZGQ0MWM0NjU2IiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)",
-        unsafe_allow_html=True,
-    )
+    # st.markdown(
+    #     "[🔗 Acessar gráfico em BI](https://app.powerbi.com/view?r=eyJrIjoiOWQ0ZjBjZTMtZTYzNy00OTcyLWIwNjUtZWViZGQ0MWM0NjU2IiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)",
+    #     unsafe_allow_html=True,
+    # )
 
 
 if __name__ == "__main__":
