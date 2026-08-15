@@ -20,7 +20,7 @@ st.markdown(
     "[🔗 Acessar PLanilha de Atividades](https://docs.google.com/spreadsheets/d/1PPObC1YVFTzHyxWZqtNwocvr53ZDfyszo69DVkjvIxc/edit?usp=sharing)"
 )
 st.markdown(
-    "[🔗 Acessar Planila de Processos](https://app.powerbi.com/view?r=eyJrIjoiOWQ0ZjBjZTMtZTYzNy00OTcyLWIwNjUtZWViZGQ0MWM0NjU2IiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)"
+    "[🔗 Acessar Planila de Processos](https://docs.google.com/spreadsheets/d/1E37vAop5Cd4RhopYW7baRgIlkf_DjYfqHzz1gfy7-ZE/edit?usp=sharing)"
 )
 
 URL = "https://script.google.com/macros/s/AKfycbx7BTCWvv7Qksv6NeuIp2q4-PLHYyDrfYAUdDBnyosIFBKOFn6c0Z-cD8aEhzPntw3brw/exec"
