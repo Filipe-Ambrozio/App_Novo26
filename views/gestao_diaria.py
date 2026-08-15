@@ -151,8 +151,11 @@ def map_row_data(row):
     mapped = {}
     for key, value in (row or {}).items():
         normalized = normalize_key(key)
-        if "loja" in normalized or "filial" in normalized or "unidade" in normalized:
-            mapped["loja"] = str(value).strip()
+        if "estoque geral" in normalized and "loja" in normalized:
+            mapped["estoque_geral"] = value
+        elif any(pattern in normalized for pattern in ["nome da loja", "nome loja", "nome da filial", "nome da unidade", "loja", "filial", "unidade"]):
+            if "estoque" not in normalized and "geral" not in normalized:
+                mapped["loja"] = str(value).strip()
         elif "responsavel" in normalized or "responsavel" in normalized:
             mapped["responsavel"] = str(value).strip()
         elif "data" in normalized and "hora" not in normalized:
@@ -189,6 +192,9 @@ def map_row_data(row):
             mapped["estoque_troca"] = value
         elif "t+30" in normalized or "t 30" in normalized or "t30" in normalized:
             mapped["estoque_t30"] = value
+            
+        elif "atingimento" in normalized or "meta de venda" in normalized:
+            mapped["atingimento_meta"] = value
         elif "lista" in normalized and ("susp" in normalized or "suspen" in normalized):
             mapped["lista_suspensa"] = str(value).strip()
     return mapped
@@ -269,6 +275,8 @@ def render(URL):
 
     row = dados[selected_index] if dados else {}
     mapped = map_row_data(row)
+    if not mapped.get("loja"):
+        mapped["loja"] = "10 - São Lourenço"
 
     responsavel_options = [
         "Filipe Ambrozio (ASS - P.P)",
@@ -282,7 +290,8 @@ def render(URL):
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        loja = st.text_input("Loja", value=mapped.get("loja", "10 - São Lourenço"), disabled=True, key="gestao_loja")
+        loja_value = mapped.get("loja") or "10 - São Lourenço"
+        loja = st.text_input("Loja", value=loja_value, disabled=True, key="gestao_loja")
         venda_acumulada = st.text_input(
             "Venda Acumulada Mês",
             value=format_brl(mapped.get("venda_acumulada", ""), space_after_prefix=True),
@@ -308,12 +317,13 @@ def render(URL):
         st.write("**Apenas campos manuais abaixo**")
         atingimento_meta = st.text_input(
             "Atingimento da meta de venda",
-            value=format_percent(mapped.get("atingimento_meta", "41")),
+            value=format_percent(mapped.get("atingimento_meta", "")),
             key="gestao_atingimento_meta",
+
         )
         estoque_geral = st.text_input(
             "Estoque Geral Loja",
-            value=format_brl(mapped.get("estoque_geral", ""), space_after_prefix=False),
+            value=format_brl(mapped.get("estoque_geral", ""), space_after_prefix=False, plus_sign=True),
             key="gestao_estoque_geral",
         )
         receitas = st.text_input(
@@ -372,3 +382,4 @@ def render(URL):
 
     link = f"https://api.whatsapp.com/send?text={urllib.parse.quote(texto)}"
     st.markdown(f"[👉 Abrir WhatsApp]({link})", unsafe_allow_html=True)
+
