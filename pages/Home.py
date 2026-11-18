@@ -23,7 +23,7 @@ st.markdown(
     "[🔗 Acessar Planila de Processos](https://docs.google.com/spreadsheets/d/1E37vAop5Cd4RhopYW7baRgIlkf_DjYfqHzz1gfy7-ZE/edit?usp=sharing)"
 )
 st.markdown(
-    "[🔗 Acessar gráfico em BI28](eyJrIjoiMzJkNDNmZjktNDg5My00Y2E2LWE5NGQtZWMzYjFiMWM0MWNjIiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)"
+    "[🔗 Acessar gráfico em BI28](https://app.powerbi.com/view?r=eyJrIjoiMzJkNDNmZjktNDg5My00Y2E2LWE5NGQtZWMzYjFiMWM0MWNjIiwidCI6ImU1MzA4M2Y2LTYwOWItNDQzMi05NmVkLWJjZGM2NmM1MjI2YSJ9)"
 )
 
 URL = "https://script.google.com/macros/s/AKfycbx7BTCWvv7Qksv6NeuIp2q4-PLHYyDrfYAUdDBnyosIFBKOFn6c0Z-cD8aEhzPntw3brw/exec"
